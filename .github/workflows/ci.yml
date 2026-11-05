@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: pytest
+      - name: Train on simulated data and keep the report
+        run: |
+          python -m pdm simulate --n 10000 --out data/ai4i_synthetic.csv
+          python -m pdm train --data data/ai4i_synthetic.csv --out reports
+      - uses: actions/upload-artifact@v4
+        with:
+          name: report
+          path: reports/

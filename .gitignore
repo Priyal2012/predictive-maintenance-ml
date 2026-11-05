@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+.env
+# the real UCI file is downloaded, not committed
+data/ai4i2020.csv
+reports/model.joblib

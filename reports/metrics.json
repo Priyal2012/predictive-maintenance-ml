@@ -1,0 +1,85 @@
+{
+  "best_model": "random_forest",
+  "cv": {
+    "logistic_regression": {
+      "pr_auc": 0.2862,
+      "roc_auc": 0.8621,
+      "recall": 0.7322,
+      "f1": 0.1171,
+      "pr_auc_std": 0.0384
+    },
+    "random_forest": {
+      "pr_auc": 0.7632,
+      "roc_auc": 0.9639,
+      "recall": 0.5501,
+      "f1": 0.6814,
+      "pr_auc_std": 0.0507
+    },
+    "hist_gradient_boosting": {
+      "pr_auc": 0.7231,
+      "roc_auc": 0.9423,
+      "recall": 0.6239,
+      "f1": 0.6759,
+      "pr_auc_std": 0.0396
+    }
+  },
+  "ablation": {
+    "raw_features": 0.6434,
+    "raw_plus_engineered": 0.7632
+  },
+  "test": {
+    "pr_auc": 0.756,
+    "roc_auc": 0.9649,
+    "precision": 0.2812,
+    "recall": 0.9184,
+    "f1": 0.4306,
+    "positives": 49,
+    "n": 2500
+  },
+  "confusion": [
+    [
+      2336,
+      115
+    ],
+    [
+      4,
+      45
+    ]
+  ],
+  "threshold": 0.0716,
+  "importances": {
+    "temp_delta_K": 0.4133,
+    "Rotational speed [rpm]": 0.2591,
+    "Tool wear [min]": 0.127,
+    "strain_minNm": 0.1071,
+    "Torque [Nm]": 0.0632,
+    "Type": 0.0539,
+    "Air temperature [K]": 0.0327,
+    "power_W": 0.0166,
+    "Process temperature [K]": 0.0095
+  },
+  "data_summary": {
+    "rows": 10000,
+    "failure_rate": 0.0198,
+    "failures": 198,
+    "by_mode": {
+      "TWF": 57,
+      "HDF": 54,
+      "PWF": 23,
+      "OSF": 61,
+      "RNF": 8
+    },
+    "by_type": {
+      "L": 5015,
+      "M": 3031,
+      "H": 1954
+    }
+  },
+  "engineered": true,
+  "artifacts": {
+    "model": "reports/model.joblib",
+    "pr_curve": "reports/pr_curve.png",
+    "confusion": "reports/confusion_matrix.png",
+    "importance": "reports/feature_importance.png"
+  }
+}
