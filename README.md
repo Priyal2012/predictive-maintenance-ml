@@ -59,7 +59,7 @@ python -m pdm predict --model reports/model.joblib --json \
 ## Install & run
 
 ```bash
-git clone https://github.com/Priyal2004784/predictive-maintenance-ml
+git clone https://github.com/Priyal2012/predictive-maintenance-ml
 cd predictive-maintenance-ml
 pip install -e ".[dev]"
 pytest                       # 10 tests incl. a full training run (~45 s)
